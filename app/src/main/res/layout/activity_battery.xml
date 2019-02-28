@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        tools:context=".battery.BatteryActivity">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/serviceSw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/battery_monitor_title"
+            android:textOff="@string/state_off"
+            android:textOn="@string/state_on"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:switchPadding="8dp" />
+
+        <TextView
+            android:id="@+id/level_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/low_level_max_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/serviceSw" />
+
+        <me.angrybyte.numberpicker.view.ActualNumberPicker
+            android:id="@+id/level_number_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/level_title"
+            app:max_value="100"
+            app:min_value="1"
+            app:show_bars="false"
+            app:show_fast_controls="false"
+            app:show_text="true"
+            app:text_size="16sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
